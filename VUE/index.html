@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			{{message}}
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					message: 'Hello Vue.js World',
+				},
+			});
+		</script>
+	</body>
+
+</html>

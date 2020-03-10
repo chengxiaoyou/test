@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			{{message}}<br> 
+			{{message | toupper}}
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					message: 'hello vue.js world',
+				},
+				filters:{
+					toupper: function(value) {
+					return value.toUpperCase();
+				}
+				}
+				
+			});
+		</script>
+	</body>
+
+</html>

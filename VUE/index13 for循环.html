@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<h1 v-for="(value,key) in mygame">
+				{{key}}:{{value}}
+			</h1>
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					mygame:{
+						'游戏名':'绝地求生',
+						'价格':'98',
+						'发布时间':'2017年9月',
+						'游戏类型':'第三人称射击',
+						'适合年龄段':'16岁以上'
+					}
+				},
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<style type="text/css">
+		.active {
+			color: red;
+		}
+		
+		.big {
+			font-size: 36px;
+		}
+	</style>
+
+	<body>
+		<div id="maApp">
+			<!--<div v-bind:class="{active:isActive}">红色文本</div>
+			<!--active 是真正的class
+			<div :class="{active:isActive}">红色文本2</div>-->
+
+			<div :class="myclass">
+				文本
+			</div>
+			<button @click="btn">改变class</button>
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					myclass:{
+						active:true,
+						big:true,
+					},
+				},
+				methods: {
+					btn: function() {
+						this.myclass.active = !this.myclass.active;
+						this.myclass.big = !this.myclass.big;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

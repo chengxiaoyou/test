@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<say-to pname="one">
+				我是第一条语句
+			</say-to>
+			<say-to pname="two">
+				我是第二条语句
+			</say-to>
+			<say-to pname="three">
+				我是第三条语句
+			</say-to>
+		</div>
+
+		<script type="text/javascript">
+			Vue.component('say-to',{
+				props:['pname'],
+				template:'<div>'
+						+'您好，{{pname}}'
+						+'<slot></solt>'
+						+'</div>',
+			});
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					message: 'Hello Vue.js World',
+				},
+			});
+		</script>
+	</body>
+
+</html>

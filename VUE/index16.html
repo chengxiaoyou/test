@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<input type="checkbox" value="使命召唤" v-model="gameAge">
+			使命召唤
+			<input type="checkbox" value="英雄联盟" v-model="gameAge">
+			英雄联盟
+			<input type="checkbox" value="古墓丽影" v-model="gameAge">
+			古墓丽影
+			<br /><br />
+			你选择的游戏是{{gameAge}}
+			<br /><br />
+			<br /><br />
+			性别：
+			<input type="radio" value="男" v-model="age">
+			男
+			<input type="radio" value="女" v-model="age">
+			女
+			<br /><br />
+			喜欢的游戏：
+			<input type="radio" value="古墓丽影" v-model="game">
+			古墓丽影
+			<input type="radio" value="使命召唤" v-model="game">
+			使命召唤
+			<br /><br />
+			你的选性别是：{{age}}
+			<br>
+			你喜欢玩的游戏是：{{game}}
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					gameAge:[],
+					age:'',
+					game:''
+				},
+			});
+		</script>
+	</body>
+
+</html>

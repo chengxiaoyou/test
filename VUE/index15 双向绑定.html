@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<h1>表单控件，双向绑定</h1>
+			<input id="text" v-model="message" placeholder="请输入文字" />
+			<p>你输入的文本是{{message}}</p>
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					message: '',
+				},
+				methods:{
+					
+				}
+			});
+		</script>
+	</body>
+
+</html>

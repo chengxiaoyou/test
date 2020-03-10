@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<show-member-info name="mike" :age="22" :detail="{address:'china',language:'中文'}"></show-member-info>
+		</div>
+
+		<script type="text/javascript">
+			Vue.component('show-member-info',{
+				props:{
+					name:{
+						type:String,
+						requeired: true,
+					},
+					age:{
+						type:Number,
+						validator:function (value) {
+							return value >= 0 && value<=130;
+						}
+					},
+					detail:{
+						type:Object,
+						default:function () {
+							return{
+								address:'US',
+								language:'English',
+							};
+						}
+					},
+				},
+				template:'<div>姓名：{{this.name}}<br>'
+						+'年龄：{{this.age}}岁<br>'
+						+'地址：{{this.detail.address}}<br>'
+						+'语言：{{this.detail.language}}<br>',
+			});
+			var myApp = new Vue({
+				el: '#maApp',
+				
+			});
+		</script>
+	</body>
+
+</html>

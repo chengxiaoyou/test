@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<style type="text/css">
+		input{
+			width: 60px;
+		}
+	</style>
+
+	<body>
+		<div id="maApp">
+			原始价格为<input v-model="message">円，含税价格{{messageInt}}円，折合人民币是{{messageChinaRMB}}元
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					message: '',
+				},
+				computed:{
+					messageInt:function(){
+						return Math.round(this.message * 1.08);
+					},
+					messageChinaRMB:function(){
+						return Math.round(this.messageInt / 16.75);
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

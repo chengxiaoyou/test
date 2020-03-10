@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<style type="text/css">
+		#maApp {
+			width: 270px;
+			border: 1px solid black;
+		}
+		
+		#app {
+			width: 270px;
+			border: 1px solid black;
+		}
+	</style>
+
+	<body>
+		<!--<div id="maApp">
+			<p>你喜欢的游戏是：{{game}}</p>
+			<input v-model="game" />
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					game:''
+					
+				},
+			});-->
+
+		<div id="maApp">
+			<h1>Vue</h1>
+			<p>你喜欢的游戏是：{{game}}</p>
+			<button v-on:click="btn('赛尔号')">赛尔号</button>
+			<button @click="btn('我的世界')">我的世界</button>
+		</div>
+		<br /><br />
+		<div id="app">
+			<h1>原生js</h1>
+			<p>你喜欢的游戏是：<span id="text">4399游戏盒</span></p>
+			<button id="btn1">超级马里奥</button>
+			<button id="btn2">使命召唤</button>
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					game: '4399游戏盒'
+				},
+				methods: {
+					btn: function(pname) {
+						this.game = pname;
+					}
+				}
+			});
+
+			var txt = document.getElementById("text");
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+
+			function btn(obj, text) {
+				obj.onclick = function() {
+					txt.innerHTML = text;
+				}
+			}
+			btn(btn1, "超级马里奥");
+			btn(btn2, "使命召唤");
+
+			/*btn1.onclick = function(){
+					txt.innerHTML = "超级马里奥";
+				}*/
+		</script>
+	</body>
+
+</html>

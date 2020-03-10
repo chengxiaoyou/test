@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="maApp">
+			<p>你最喜欢的LOL中那个英雄</p>
+			<input type="radio" value="盖伦" v-model="lolhero" />盖伦
+			<input type="radio" value="皇子" v-model="lolhero" />皇子
+			<input type="radio" value="卡莎" v-model="lolhero" />卡莎
+			<input type="radio" value="鳄鱼" v-model="lolhero" />鳄鱼
+			<br /><br />
+			<p>你希望的全明星</p>
+			<select v-model="lolAll" multiple="multiple" style="width: 100px; height: 100px;">
+				<option>UZI</option>
+				<option>jacklove</option>
+				<option>小虎</option>
+				<option>the shy</option>
+				<option>ning</option>
+				<option>tian</option>
+				<option>ming</option>
+			</select>
+			<br /><br />
+			<h1>选择结果</h1>
+			<p>你喜欢的英雄是：{{lolhero}}</p>
+			<p>你希望的全明星阵容是：{{lolAll}}</p>
+		</div>
+
+		<script type="text/javascript">
+			var myApp = new Vue({
+				el: '#maApp',
+				data: {
+					lolhero:'',
+					lolAll:''
+				},
+			});
+		</script>
+	</body>
+
+</html>
